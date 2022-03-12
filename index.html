@@ -19,7 +19,17 @@
 </head>
 <body>
 
-<button class="button button2">Process</button>
+<button class="button button2" onclick="call_api_end_point()">Add General Tasks</button>
+
+<script type="text/javascript">
+  const api_url = "https://gf2z6bpabc.execute-api.us-east-1.amazonaws.com/default/notionGeneralTasks"
+
+    function call_api_end_point(){
+      fetch(api_url)
+      .then(resp => resp.json())
+      .then(data => console.log(data))
+    }
+</script>
 
 </body>
 </html>
